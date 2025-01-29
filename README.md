@@ -64,3 +64,109 @@ We can see how strong the correlation between features is through the correlatio
 ## Data preparation
 
 To make a streamline process of all the transformations and features engineering we've created a pipeline where the new features as computed.
+
+## Modeling
+
+The modeling phase is where se select the models that will be used, our goal is to classify new samples of flower in one of the three species, so we will use classifiers and compare the results the models selected are
+
+<table>
+    <tr>
+        <th>Model</th>
+        <th>Library</th>
+    </tr>
+    <tr>
+        <td>Decision Tree Classifier</td>
+        <td>scikit-learn</td>
+    </tr>
+    <tr>
+        <td>Random Forest Classifier</td>
+        <td>scikit-learn</td>        
+    </tr>
+        <tr>
+        <td>SVM Classifier</td>
+        <td>scikit-learn</td>        
+    </tr>
+    </tr>
+        <tr>
+        <td>KNN Classifier</td>
+        <td>scikit-learn</td>        
+    </tr>
+        </tr>
+        <tr>
+        <td>MLP Classifier</td>
+        <td>scikit-learn</td>        
+    </tr>
+</table>
+
+We first split the DataFrame into features (X) and our target variable (y). After that, it was necessary to encode our target variable. We used a `LabelEncoder` to assign a different numeric value to each of the species.
+
+Next, we had to split our data into training and testing sets. For this, we used the `train_test_split` function from the scikit-learn library. The data doesn't have many observations, so we decided to use 20% of it for testing and 80% for training. `random_state` was set to 0 for reproducibility purposes
+
+```
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+```
+
+Here's the corrected and enhanced text:
+
+For each model, we trained it using the training set without modifying any hyperparameters; we used the default values. After training, we predicted the class labels of observations in the test dataset and computed _Accuracy_, _Balanced Accuracy_, _Precision_, _Recall_, and _F1-score_ for each model. The results are as follows:
+
+<table>
+    <tr>
+        <th>Model</th>
+        <th>Accuracy</th>
+        <th>Balanced Accuracy</th>
+        <th>Precision</th>
+        <th>Recall</th>
+        <th>F1-score</th>
+    </tr>
+    <tr>
+        <td>Desicion Tree</td>
+        <td>96.67%</td>
+        <td>97.44%</td>
+        <td>96.67%</td>
+        <td>96.67%%</td>
+        <td>96.67%</td>
+    </tr>
+        <tr>
+        <td>Random Forest</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>SVM</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>KNN</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>MLP</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%%</td>
+        <td>100%</td>
+    </tr>
+</table>
+
+All models had excelent results predicting the classes in the _testing_ set. _Decision Tree Classifier_ was the only one that missed 1 prediction. While such high scores might indicate an _overfitting_ this is not the case, this is a relatively small and easy dataset so getting results like this is expected.
+
+![confusion_matrix_all](img/confusion_matrix_all.png) 
+
+To help us visualize any errors, we also plotted the confusion matrix for each model, because only Decision Tree Classifier missed a classification, all confusion matrixes are the same except one
+
+![confusion_matrix_decision_tree](img/confusion_matrix_dt.png)
+
+This last one is the confusion matrix of Decision Tree classifiers, as it might be observed the error happene when the model classified as _virginica_ a _versicolor_ observation.
