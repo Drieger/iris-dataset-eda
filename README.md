@@ -14,7 +14,6 @@ The data set consists of 50 samples from each of three species of Iris (Iris set
 ├─ img/
 ├─ notebooks/
 ├─ src/
-
 ```
 
 `img`: images used to document this project <br />
@@ -161,12 +160,12 @@ For each model, we trained it using the training set without modifying any hyper
     </tr>
 </table>
 
-All models had excelent results predicting the classes in the _testing_ set. _Decision Tree Classifier_ was the only one that missed 1 prediction. While such high scores might indicate an _overfitting_ this is not the case, this is a relatively small and easy dataset so getting results like this is expected.
+All models exhibited excellent performance in predicting classes on the testing set. The Decision Tree Classifier was the only model that misclassified one instance. While such high scores might initially suggest overfitting, this is unlikely in this case. The dataset is relatively small and straightforward, making achieving high accuracy expected.
 
 ![confusion_matrix_all](img/confusion_matrix_all.png) 
 
-To help us visualize any errors, we also plotted the confusion matrix for each model, because only Decision Tree Classifier missed a classification, all confusion matrixes are the same except one
+To help visualize any errors, we also plotted the confusion matrix for each model. Since only the _Decision Tree Classifier_ misclassified one instance, all confusion matrices are identical except for the one corresponding to the Decision Tree Classifier.
 
 ![confusion_matrix_decision_tree](img/confusion_matrix_dt.png)
 
-This last one is the confusion matrix of Decision Tree classifiers, as it might be observed the error happene when the model classified as _virginica_ a _versicolor_ observation.
+This last one is the confusion matrix of the Decision Tree classifier. As it might be observed, the error happened when the model classified a _versicolor_ observation as _virginica_.
