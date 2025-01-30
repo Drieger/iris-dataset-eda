@@ -107,8 +107,6 @@ Next, we had to split our data into training and testing sets. For this, we used
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 ```
 
-Here's the corrected and enhanced text:
-
 For each model, we trained it using the training set without modifying any hyperparameters; we used the default values. After training, we predicted the class labels of observations in the test dataset and computed _Accuracy_, _Balanced Accuracy_, _Precision_, _Recall_, and _F1-score_ for each model. The results are as follows:
 
 <table>
