@@ -12,11 +12,13 @@ The data set consists of 50 samples from each of three species of Iris (Iris set
 
 ```
 ├─ img/
+├─ models/
 ├─ notebooks/
 ├─ src/
 ```
 
 `img`: images used to document this project <br />
+`models`: serialized models <br />
 `notebooks`: notebooks used during analysis and model training <br />
 `src`: helper functions used during analysis
 
@@ -169,3 +171,15 @@ To help visualize any errors, we also plotted the confusion matrix for each mode
 ![confusion_matrix_decision_tree](img/confusion_matrix_dt.png)
 
 This last one is the confusion matrix of the Decision Tree classifier. As it might be observed, the error happened when the model classified a _versicolor_ observation as _virginica_.
+
+## Evaluation
+
+Through this project, we analyzed and understood the distinct characteristics of three iris flower species: Iris setosa, Iris virginica, and Iris versicolor. We identified that Iris setosa was linearly separable from the other two, making its classification relatively straightforward. While Iris virginica and Iris versicolor also exhibited different characteristic distributions, they shared some overlapping values, which presented a greater classification challenge.
+
+To address this, we built several classification models (Decision Tree, Random Forest, SVM, KNN, and MLP) and evaluated their performance using a range of metrics (Accuracy, Balanced Accuracy, Precision, Recall, and F1-score). All models performed exceptionally well, achieving nearly perfect scores, with most metrics reaching 100%. The only exception was the Decision Tree Classifier, which misclassified a single sample in our test dataset.
+
+To further refine these models, future work could involve hyperparameter optimization using techniques like GridSearch or RandomSearch.  Testing the models against a larger, more diverse dataset would also be beneficial.
+
+## Deployment
+
+This project does not deploy the model as a standalone application. However, all trained models have been serialized and are available in the `/models` folder.
