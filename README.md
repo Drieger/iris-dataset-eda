@@ -176,8 +176,10 @@ Through this project, we analyzed and understood the distinct characteristics of
 
 To address this, we built several classification models (Decision Tree, Random Forest, SVM, KNN, and MLP) and evaluated their performance using a range of metrics (Accuracy, Balanced Accuracy, Precision, Recall, and F1-score). All models performed exceptionally well, achieving nearly perfect scores, with most metrics reaching 100%. The only exception was the Decision Tree Classifier, which misclassified a single sample in our test dataset.
 
-To further refine these models, future work could involve hyperparameter optimization using techniques like GridSearch or RandomSearch.  Testing the models against a larger, more diverse dataset would also be beneficial.
+To further refine these models, future work could involve hyperparameter optimization using techniques like GridSearch or RandomSearch. If possible, evaluate the model's performance on an independent, unseen dataset to assess its true generalization ability.
 
 ## Deployment
 
-This project does not deploy the model as a standalone application. However, all trained models have been serialized and are available in the `/models` folder.
+This project will not involve the deployment of any models in a production environment. The deployment phase will consist of storing the serialized models within the designated `models` folder. The `pickle` library will be utilized for serializing and saving the trained models to disk.
+
+This approach allows for convenient storage and potential future reuse of the trained models. However, it's important to note that this is not a complete deployment solution. For production deployment, additional considerations such as model serving, versioning, monitoring, and security would be necessary.
