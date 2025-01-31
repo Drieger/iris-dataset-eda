@@ -44,13 +44,13 @@ After that, we looked at the relation between features. In this step, we first c
         <th>observation</th>
     </tr>
     <tr>
-        <td>Petal_Prop</td><td>rate between petal length and petal width</td>
+        <td>Petal_Prop</td><td>ratio between petal length and petal width</td>
     </tr>
      <tr>
-        <td>Sepal_Prop</td><td>rate between sepal length and sepal width</td>
+        <td>Sepal_Prop</td><td>ratio between sepal length and sepal width</td>
     </tr>
          <tr>
-        <td>SPL/SL</td><td>rate between petal length and sepal length</td>
+        <td>SPL/SL</td><td>ratio between petal length and sepal length</td>
     </tr>
 </table>
 
